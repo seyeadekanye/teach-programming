@@ -12,3 +12,12 @@ Threshold 1: 85
 Threshold 2: 70
 Theshold 3: 55
 '''
+
+# Determine the category pass/fail of each for each score based on the class
+
+import csv
+
+with open("../data/ClassScores.csv", 'r', newline='') as csvfile:
+    data = csv.reader(csvfile)
+    for row in data:
+        print(row)
