@@ -17,7 +17,7 @@ def calculate_unique_months_net_total_and_average_change(csv_file):
         next(data)
         previous_amount = int(next(data)[1])
         unique_months = set()
-        net_total = 0
+        net_total = previous_amount
         chg_sum = 0
         row_count = 0
         for row in data:
@@ -28,7 +28,7 @@ def calculate_unique_months_net_total_and_average_change(csv_file):
             chg_sum += (current_amount - previous_amount)
             previous_amount = current_amount
         unique_month_count = len(unique_months)
-        average_change = chg_sum / (row_count - 1)
+        average_change = chg_sum / row_count
     return unique_month_count, net_total, average_change
 
 
